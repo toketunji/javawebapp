@@ -4,5 +4,6 @@
 
 <h2>Message : ${message}</h2>
 <h2>Counter4 : ${counter}</h2>
+<h2>This is Interesting : ${hostname}</h2>
 </body>
 </html>
