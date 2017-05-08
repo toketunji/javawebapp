@@ -4,6 +4,6 @@
 
 <h2>Info : ${message}</h2>
 <h2>Counting : ${counter}</h2>
-<h2>This is absolutely Interesting : $hostname</h2>
+<h2>This is absolutely Interesting: Thanks Segun Ojewale</h2>
 </body>
 </html>
