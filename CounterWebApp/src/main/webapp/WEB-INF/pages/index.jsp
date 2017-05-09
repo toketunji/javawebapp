@@ -4,6 +4,6 @@
 
 <h2>Info : ${message}</h2>
 <h2>Counting : ${counter}</h2>
-<h2>Message3: This is absolutely Interesting: Thanks Segun Ojewale from Tope</h2>
+<h2>Message3: This is absolutely Interesting: Thanks Segun Ojewale from Tope Oke</h2>
 </body>
 </html>
