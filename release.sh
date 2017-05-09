@@ -6,9 +6,6 @@ read commitMessage
 
 git commit -m "$commitMessage"
 
-echo 'Enter the name of the branch:'
-read branch
+git tag -a v1.0 -m "Tagging for Version 2"
 
-git push origin $branch
-
-read
+git push origin v1.0
