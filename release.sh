@@ -1,7 +1,7 @@
 #!/bin/bash
 git add .
 
-git commit -m `date +%d-%m-%Y`
+git commit -m `date +%d-%m-%Y:%H:%M:%S`
 
 #get highest tag number
 VERSION=`git describe --abbrev=0 --tags`
