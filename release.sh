@@ -1,10 +1,7 @@
 #!/bin/bash
 git add .
 
-echo 'Enter the commit message:'
-read commitMessage
-
-git commit -m "$commitMessage"
+git commit -m `date +%d-%m-%Y:%H:%M:%S`
 
 #get highest tag number
 VERSION=`git describe --abbrev=0 --tags`
