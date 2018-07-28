@@ -72,7 +72,15 @@
 		</dependency>
 
 	</dependencies>
-
+	<distributionManagement>
+        <repository>
+            <id>maven-releases</id>
+            <url>http://137.117.243.179:8081/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>maven-snapshots</id>
+            <url>http://137.117.243.179:8081/repository/maven-snapshots/</url>
+        </snapshotRepository>
 	<build>
 		<finalName>CounterWebApp</finalName>
 
