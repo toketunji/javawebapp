@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>counterwebapp-docker</artifactId>
 	<packaging>pom</packaging>
-	<name>CounterWebApp Maven Webapp</name>
+	<name>docker-builder</name>
 	<url>http://maven.apache.org</url>
 	
 	<parent>
