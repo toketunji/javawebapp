@@ -179,7 +179,7 @@
                  <plugins>
 		    <plugin>
                        <groupId>com.spotify</groupId>
-                       <artifactsId>docker-maven-plugin</artifactsId>
+                       <artifactId>docker-maven-plugin</artifactId>
                        <configuration>
 			  <serverId>docker-registry</serverId>
                           <pushImage>${docker.registry}/${docker.image.name}</pushImage>
