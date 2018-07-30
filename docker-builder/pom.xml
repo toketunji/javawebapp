@@ -145,7 +145,7 @@
                         <resource>
                           <targetPath>/</targetPath>
                           <directory>${project.build.directory}</directory>
-                          <include>CounterWebApp.war</include>
+                          <include>CounterWebApp.pom</include>
                         </resource>
                      </resources>
                      </configuration>
