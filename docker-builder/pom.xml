@@ -80,16 +80,6 @@
 		</dependency>
 
 	</dependencies>
-	<distributionManagement>
-            <repository>
-                <id>maven-releases</id>
-                <url>http://23.101.66.130:8081/repository/docker-releases/</url>
-            </repository>
-            <snapshotRepository>
-                <id>maven-snapshots</id>
-                <url>http://23.101.66.130:8081/repository/maven-snapshots/</url>
-            </snapshotRepository>
-	 </distributionManagement>
 	<build>
 	     <resources>
 	         <resource>
