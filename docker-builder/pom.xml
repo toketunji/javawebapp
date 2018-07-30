@@ -9,7 +9,7 @@
 	<url>http://maven.apache.org</url>
 	
 	<parent>
-           <groupId>docker.mkyong</groupid>
+           <groupId>docker.mkyong</groupId>
 	   <version>1.0-SNAPSHOT</version>
 	   <artifactid>counterwebapp-docker</artifactid>
 	   <relativePath>../pom.xml</relativePath>
