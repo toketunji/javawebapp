@@ -3,23 +3,29 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
 	http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.mkyong</groupId>
-	<artifactId>CounterWebApp</artifactId>
-	<packaging>war</packaging>
-	<version>1.0-SNAPSHOT</version>
+	<artifactId>counterwebapp-docker</artifactId>
+	<packaging>pom</packaging>
 	<name>CounterWebApp Maven Webapp</name>
 	<url>http://maven.apache.org</url>
+	
+	<parent>
+           <groupid>docker.mkyong</groupid>
+	   <version>1.0-SNAPSHOT</version>
+	   <artifactid>counterwebapp-docker</artifactid>
+	   <relativePath>../pom.xml</relativePath>
+        </parent>
 	<properties>
 		<jdk.version>1.8</jdk.version>
 		<spring.version>4.1.1.RELEASE</spring.version>
 		<jstl.version>1.2</jstl.version>
+		<docker.registry>23.101.66.130</docker.registry>
+		<docker.image.name>cwa</docker.image.name>
+		<service.artifactid>CounterWebApp</service.artifactid>
 		<junit.version>4.11</junit.version>
 		<logback.version>1.0.13</logback.version>
 		<jcl-over-slf4j.version>1.7.5</jcl-over-slf4j.version>
 	</properties>
-        <modules>
-        	<module>docker-builder</module>
-	</modules>
+
 	<dependencies>
 
 		<!-- Unit Test -->
@@ -77,7 +83,7 @@
 	<distributionManagement>
             <repository>
                 <id>maven-releases</id>
-                <url>http://23.101.66.130:8081/repository/maven-releases/</url>
+                <url>http://23.101.66.130:8081/repository/docker-releases/</url>
             </repository>
             <snapshotRepository>
                 <id>maven-snapshots</id>
@@ -85,13 +91,22 @@
             </snapshotRepository>
 	 </distributionManagement>
 	<build>
-		<finalName>CounterWebApp</finalName>
-
+	     <resources>
+	         <resource>
+		    <directory>${project.basedir}</directory>
+ 		    <filtering>true</filtering>
+                    <includes>
+                       <include>**/Dockerfile</include>
+		    </includes>
+	         </resource>
+             </resources>
+	     <finalName>CounterWebApp</finalName>
+	     <pluginManagement>
 		<plugins>
 		    <!-- Eclipse project -->
 		  <plugin>
 			<groupId>org.apache.maven.plugins</groupId>
-		<artifactId>maven-eclipse-plugin</artifactId>
+			<artifactId>maven-eclipse-plugin</artifactId>
 			<version>2.9</version>
 			<configuration>
 			        <!-- Always download and attach dependencies source code -->
@@ -101,7 +116,42 @@
 				<wtpversion>2.0</wtpversion>
 			</configuration>
 		  </plugin>
-
+		  <plugin>
+    		     <groupId>com.spotify</groupId>
+		     <artifactId>docker-maven-plugin</artifactId>
+		     <version>0.2.3</version>
+		     <executions>
+        		<execution>
+            		   <phase>package</phase>
+            		   <goals>
+                	     <goal>build</goal>
+            		   </goals>
+       		        </execution>
+    		     </executions>
+ 		     <configuration>
+                         <dockerDirectory>${project.basedir}</dockerDirectory>
+                         <imageName>${docker.image.name}</imageName>
+			 <pushImage>true</pushImage>
+                     <resources>
+                        <resource>
+                          <targetPath>/</targetPath>
+                          <directory>${project.basedir}</directory>
+                          <excludes>
+                            <exclude>target/**/*</exclude>
+                            <exclude>pom.xml</exclude>
+                            <exclude>*.iml</exclude>
+                          </excludes>
+                        </resource>
+                        <resource>
+                          <targetPath>/</targetPath>
+                          <directory>${project.build.directory}</directory>
+                          <include>CounterWebApp.war</include>
+                        </resource>
+                     </resources>
+                     </configuration>
+                  </plugin>
+                </plugins>
+             </pluginManagement>
 		  <!-- Set JDK Compiler Level -->
 		  <plugin>
 			<groupId>org.apache.maven.plugins</groupId>
@@ -126,4 +176,21 @@
 		</plugins>
 
 	</build>
+        <profiles>
+	   <profile>
+              <id>docker-remote</id>
+ 	      <build>
+                 <plugins>
+		    <plugin>
+                       <groupId>com.spotify</groupId>
+                       <artifactsId>docker-maven-plugin</artifactsId>
+                       <configuration>
+			  <serverId>docker-registry</serverId>
+                          <pushImage>${docker.registry}/${docker.image.name}</pushImage>
+                       </configuration>
+                    </plugin>
+                 </plugins>
+              </build>
+           </profile>
+        </profiles>
 </project>
