@@ -82,7 +82,7 @@
                         <resource>
                           <targetPath>/</targetPath>
                           <directory>${project.build.directory}</directory>
-                          <include>CounterWebApp.pom</include>
+                          <include>CounterWebApp.war</include>
                         </resource>
                      </resources>
                      </configuration>
@@ -118,7 +118,8 @@
                        <groupId>com.spotify</groupId>
                        <artifactId>docker-maven-plugin</artifactId>
                        <configuration>
-			  <serverId>docker-registry</serverId>
+			  <serverId>docker-registrya</serverId>
+			  <pushImage>true</pushImage>
                           <pushImage>${docker.registry}/${docker.image.name}</pushImage>
                        </configuration>
                     </plugin>
