@@ -118,7 +118,7 @@
                        <groupId>com.spotify</groupId>
                        <artifactId>docker-maven-plugin</artifactId>
                        <configuration>
-			  <serverId>docker-registry</serverId>
+			  <serverId>localnexus</serverId>
 			  <pushImage>true</pushImage>
                           <pushImage>${docker.registry}/${docker.image.name}</pushImage>
                        </configuration>
