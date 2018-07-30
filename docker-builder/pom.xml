@@ -150,8 +150,6 @@
                      </resources>
                      </configuration>
                   </plugin>
-                </plugins>
-             </pluginManagement>
 		  <!-- Set JDK Compiler Level -->
 		  <plugin>
 			<groupId>org.apache.maven.plugins</groupId>
@@ -162,7 +160,6 @@
 				<target>${jdk.version}</target>
 			</configuration>
 		  </plugin>
-
 		  <!-- For Maven Tomcat Plugin -->
 		  <plugin>
 			<groupId>org.apache.tomcat.maven</groupId>
@@ -172,9 +169,8 @@
 				<path>/CounterWebApp</path>
 			</configuration>
 		  </plugin>
-
 		</plugins>
-
+	     </pluginManagement>
 	</build>
         <profiles>
 	   <profile>
