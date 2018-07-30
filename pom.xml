@@ -10,7 +10,7 @@
 	<name>CounterWebApp Webapp</name>
 	<url>http://maven.apache.org</url>
 	<modules>
-	      <module>docker-builder</modules>
+	      <module>docker-builder</module>
         </modules>
 	<properties>
 		<jdk.version>1.8</jdk.version>
