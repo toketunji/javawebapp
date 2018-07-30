@@ -77,7 +77,7 @@
 	<distributionManagement>
             <repository>
                 <id>maven-releases</id>
-                <url>http://23.101.66.130:8081/repository/maven-releases/</url>
+                <url>http://137.117.174.44:8081/repository/maven-releases/</url>
             </repository>
 	 </distributionManagement>
 	<build>
