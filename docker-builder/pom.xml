@@ -11,7 +11,7 @@
 	<artifactId>docker-builder</artifactId>
 	<properties>
 		<push.image>false</push.image>
-		<docker.registry>137.117.174.44:8081/repository/docker-releases</docker.registry>
+		<docker.registry>137.117.174.44:8081/repository/maven-releases</docker.registry>
 		<docker.image.name>counterwebapp1.0</docker.image.name>
 		<service.groupId>com.mkyong</service.groupId>
 		<service.artifactId>CounterWebApp</service.artifactId>
