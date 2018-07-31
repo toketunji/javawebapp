@@ -10,7 +10,7 @@
 	<parent>
            <groupId>com.mkyong</groupId>
 	   <version>1.0</version>
-	   <artifactId>CounterWebApp</artifactId>
+	   <artifactId>javawebapp</artifactId>
 	   <relativePath>../pom.xml</relativePath>
         </parent>
 	<properties>
