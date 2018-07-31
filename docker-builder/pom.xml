@@ -6,15 +6,15 @@
 	<parent>
            <groupId>com.mkyong</groupId>
 	   <version>1.0</version>
-	   <artifactId>javawebapp</artifactId>
+	   <artifactId>CounterWebApp</artifactId>
 	</parent>
 	<artifactId>docker-builder</artifactId>
 	<properties>
 		<push.image>false</push.image>
-		<docker.registry>137.117.174.44</docker.registry>
-		<docker.image.name>cwa</docker.image.name>
+		<docker.registry>nexusREPO</docker.registry>
+		<docker.image.name>tealO/counterwebapp:1.0</docker.image.name>
 		<service.groupId>com.mkyong</service.groupId>
-		<service.artifactId>javawebapp</service.artifactId>
+		<service.artifactId>CounterWebApp</service.artifactId>
 	</properties>
 	<build>
 	     <resources>

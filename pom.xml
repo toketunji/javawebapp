@@ -4,7 +4,7 @@
 	http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.mkyong</groupId>
-	<artifactId>javawebapp</artifactId>
+	<artifactId>CounterWebApp</artifactId>
 	<packaging>pom</packaging>
 	<version>1.0</version>
 	<name>CounterWebApp Webapp</name>
@@ -84,6 +84,10 @@
                 <id>maven-releases</id>
                 <url>http://137.117.174.44:8081/repository/maven-releases/</url>
             </repository>
+	    <snapshotRepository>
+                <id>maven-snapshots</id>
+                <url>http://137.117.174.44:8081/repository/maven-snapshots/</url>
+            </snapshotRepository>
 	 </distributionManagement>
 	<build>
 		<finalName>CounterWebApp</finalName>
