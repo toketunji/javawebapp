@@ -42,7 +42,7 @@
                 	   </execution>
                         </executions>
 		      <configuration>
-                         <dockerDirectory>${project.build.directory}</dockerDirectory>
+                         <dockerDirectory>${project.basedir}</dockerDirectory>
                          <imageName>${docker.image.name}</imageName>
 			 <pushImage>true</pushImage>
                         <resources>
