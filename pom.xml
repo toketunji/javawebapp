@@ -81,7 +81,7 @@
 	</dependencies>
 	<distributionManagement>
             <repository>
-                <id>maven-releases</id>
+                <id>localnexus</id>
                 <url>http://137.117.174.44:8081/repository/maven-releases/</url>
             </repository>
 	    <snapshotRepository>
