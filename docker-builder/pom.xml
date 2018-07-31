@@ -95,6 +95,8 @@
                        <artifactId>docker-maven-plugin</artifactId>
                        <configuration>
 			  <serverId>localnexus</serverId>
+			  <username>testuser</username>
+			  <password>S3lvation300</password>
 			  <pushImage>true</pushImage>
                           <pushImage>${docker.image.name}</pushImage>
                        </configuration>
