@@ -11,8 +11,7 @@
            <groupId>com.mkyong</groupId>
 	   <version>1.0</version>
 	   <artifactId>javawebapp</artifactId>
-	   <relativePath>../pom.xml</relativePath>
-        </parent>
+	</parent>
 	<properties>
 		<push.image>false</push.image>
 		<docker.registry>137.117.174.44</docker.registry>
