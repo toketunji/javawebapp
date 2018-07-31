@@ -33,11 +33,19 @@
     		       <groupId>com.spotify</groupId>
 		       <artifactId>docker-maven-plugin</artifactId>
 		       <version>0.4.11</version>
-		     <configuration>
+		       <executions>
+                           <execution>
+                               <phase>package</phase>
+                                   <goals>
+                                       <goal>build</goal>
+                                    </goals>
+                	   </execution>
+                        </executions>
+		      <configuration>
                          <dockerDirectory>${project.build.directory}</dockerDirectory>
-                         <imageName>${docker.image.name}</imageName>
-			 <pushImage>false</pushImage>
-                       <resources>
+                         <imageName>${docker.registry}/${docker.image.name}</imageName>
+			 <pushImage>true</pushImage>
+                        <resources>
                           <resource>
                             <targetPath>/</targetPath>
                             <directory>${project.basedir}</directory>
@@ -54,14 +62,6 @@
                          </resource>
                        </resources>
                      </configuration>
-	             <executions>
-        		<execution>
-            		    <goals>
-                               <goal>build</goal>
-                            </goals>
-				<phase>package</phase>
-                        </execution>
-		     </executions>
                   </plugin>			   
 	          <plugin>
     			<groupId>org.apache.maven.plugins</groupId>
@@ -71,7 +71,7 @@
                     			<goals>
                         		<goal>copy</goal>
                     			</goals>
-                    			<phase>prepare-package</phase>
+                    			<phase>package</phase>
                     			<configuration>
                         		    <artifactItems>
                                                 <artifactItem>
