@@ -78,10 +78,10 @@
                                                       <groupId>${service.groupId}</groupId>
                                                       <artifactId>${service.artifactId}</artifactId>
                                                       <version>${project.parent.version}</version>
-                                                      <type>jar</type>
+                                                      <type>war</type>
                                                       <classifier>exec</classifier>
                                                       <outputDirectory>${project.build.directory}</outputDirectory>
-                                                      <destFileName>app.jar</destFileName>
+                                                      <destFileName>CounterWebApp.war</destFileName>
                                                 </artifactItem>
                                             </artifactItems>
                                         </configuration>
