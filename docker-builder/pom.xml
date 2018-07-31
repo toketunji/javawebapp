@@ -12,7 +12,7 @@
 	<properties>
 		<push.image>false</push.image>
 		<docker.registry>nexusREPO</docker.registry>
-		<docker.image.name>tealO/counterwebapp:1.0</docker.image.name>
+		<docker.image.name>counterwebapp1.0</docker.image.name>
 		<service.groupId>com.mkyong</service.groupId>
 		<service.artifactId>CounterWebApp</service.artifactId>
 	</properties>
