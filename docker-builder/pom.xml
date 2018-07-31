@@ -43,7 +43,7 @@
                         </executions>
 		      <configuration>
                          <dockerDirectory>${project.build.directory}</dockerDirectory>
-                         <imageName>${docker.registry}/${docker.image.name}</imageName>
+                         <imageName>${docker.image.name}</imageName>
 			 <pushImage>true</pushImage>
                         <resources>
                           <resource>
@@ -121,7 +121,7 @@
                        <configuration>
 			  <serverId>localnexus</serverId>
 			  <pushImage>true</pushImage>
-                          <pushImage>${docker.registry}/${docker.image.name}</pushImage>
+                          <pushImage>${docker.image.name}</pushImage>
                        </configuration>
                     </plugin>
                     <plugin>
