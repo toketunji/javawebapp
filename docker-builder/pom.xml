@@ -63,31 +63,6 @@
                        </resources>
                      </configuration>
                   </plugin>			   
-	          <plugin>
-    			<groupId>org.apache.maven.plugins</groupId>
-        		<artifactId>maven-dependency-plugin</artifactId>
-           		<executions>
-                		<execution>
-                    			<goals>
-                        		<goal>copy</goal>
-                    			</goals>
-                    			<phase>package</phase>
-                    			<configuration>
-                        		    <artifactItems>
-                                                <artifactItem>
-                                                      <groupId>${service.groupId}</groupId>
-                                                      <artifactId>${service.artifactId}</artifactId>
-                                                      <version>${project.parent.version}</version>
-                                                      <type>war</type>
-                                                      <classifier>exec</classifier>
-                                                      <outputDirectory>${project.build.directory}</outputDirectory>
-                                                      <destFileName>CounterWebApp.war</destFileName>
-                                                </artifactItem>
-                                            </artifactItems>
-                                        </configuration>
-                                </execution>
-                          </executions>
-                  </plugin>
 		  <!-- Set JDK Compiler Level -->
 		  <plugin>
 			<groupId>org.apache.maven.plugins</groupId>
@@ -124,25 +99,6 @@
                           <pushImage>${docker.image.name}</pushImage>
                        </configuration>
                     </plugin>
-                    <plugin>
-   			<groupId>org.sonatype.plugins</groupId>
-   			<artifactId>nexus-staging-maven-plugin</artifactId>
-   			<version>1.5.1</version>
-   			<executions>
-     			   <execution>
-         		      <id>default-deploy</id>
-                              <phase>deploy</phase>
-                                <goals>
-                                   <goal>deploy</goal>
-                                </goals>
-                           </execution>
-                        </executions>
-                        <configuration>
-                            <serverId>localnexus</serverId>
-                            <nexusUrl>http://137.117.174.44:8081</nexusUrl>
-                            <skipStaging>true</skipStaging>
-                        </configuration>
-                 </plugin>
                  </plugins>
               </build>
            </profile>
