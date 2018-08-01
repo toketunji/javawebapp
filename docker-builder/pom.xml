@@ -14,7 +14,7 @@
 		<push.image>true</push.image>
 		<docker.registry>40.113.112.83:8081/repository/docker-releases</docker.registry>
 		<docker.image.name>counterwebapp1.0</docker.image.name>
-		<service.groupId>com.docker</service.groupId>
+		<service.groupId>com.mkyong</service.groupId>
 	</properties>
 	<build>
 	     <resources>
