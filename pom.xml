@@ -76,15 +76,15 @@
 	<repositories>
 	    <repository>
 		 <id>localnexus</id>
-		 <name>docker-releases</name>
-                 <url>http://137.117.174.44:8081/repository/docker-releases/</url>
+		 <name>maven-releases</name>
+                 <url>http://137.117.174.44:8081/repository/maven-releases/</url>
 	    </repository>
 	</repositories>
 	<distributionManagement>
             <repository>
                 <id>localnexus</id>
-		<name>docker-releases</name>
-                <url>http://40.113.112.83:8081/repository/docker-releases/</url>
+		<name>maven-releases</name>
+                <url>http://40.113.112.83:8081/repository/maven-releases/</url>
             </repository>
 	    <snapshotRepository>
                 <id>maven-snapshots</id>
