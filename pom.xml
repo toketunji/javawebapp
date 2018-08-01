@@ -73,9 +73,17 @@
 		</dependency>
 
 	</dependencies>
+	<repositories>
+	    <repository>
+		 <id>localnexus</id>
+		 <name>maven-releases</name>
+                 <url>http://137.117.174.44:8081/repository/maven-releases/</url>
+	    </repository>
+	</repositories>
 	<distributionManagement>
             <repository>
-                <id>maven-releases</id>
+                <id>localnexus</id>
+		<name>maven-releases</name>
                 <url>http://137.117.174.44:8081/repository/maven-releases/</url>
             </repository>
 	    <snapshotRepository>
@@ -105,7 +113,7 @@
 		  <plugin>
 			<groupId>org.apache.maven.plugins</groupId>
 			<artifactId>maven-compiler-plugin</artifactId>
-			<version>2.3.2</version>
+			<version>3.1</version>
 			<configuration>
 				<source>${jdk.version}</source>
 				<target>${jdk.version}</target>
@@ -121,7 +129,11 @@
 				<path>/CounterWebApp</path>
 			</configuration>
 		  </plugin>
-
+                  <plugin>
+			<groupId>com.spotify</groupId>
+			<artifactId>docker-maven-plugin</artifactId>
+			<version>0.4.13</version>
+		  </plugin>
 		</plugins>
 
 	</build>
