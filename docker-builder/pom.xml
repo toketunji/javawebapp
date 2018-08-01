@@ -7,6 +7,7 @@
            <groupId>com.mkyong</groupId>
 	   <version>1.0</version>
 	   <artifactId>CounterWebApp</artifactId>
+           <relativePath>../pom.xml</relativePath>
 	</parent>
 	<artifactId>docker-builder</artifactId>
 	<properties>
@@ -40,7 +41,7 @@
                 	   </execution>
                         </executions>
 		      <configuration>
-                         <dockerDirectory>${project.basedir}</dockerDirectory>
+                         <dockerDirectory>${project.build.directory}</dockerDirectory>
                          <imageName>${docker.image.name}</imageName>
 			 <pushImage>true</pushImage>
                         <resources>
@@ -79,7 +80,32 @@
 			<configuration>
 				<path>/CounterWebApp</path>
 			</configuration>
-		  </plugin>
+	          </plugin>
+	          <plugin>
+                	<groupId>org.apache.maven.plugins</groupId>
+               		<artifactId>maven-dependency-plugin</artifactId>
+                	<executions>
+                           <execution>
+                               <phase>prepare-package</phase>
+                                   <goals>
+                                      <goal>copy</goal>
+                                   </goals>
+                                   <configuration>
+                                        <artifactItems>
+                                            <artifactItem>
+                                                 <groupId>com.mkyong</groupId>
+                                                 <artifactId>${service.artifactId}</artifactId>
+                                                 <version>${project.parent.version}</version>
+                                                 <type>war</type>
+                                                 <outputDirectory>${project.build.directory}</outputDirectory>
+                                    		 <destFileName>CounterWebApp.war</destFileName>
+                                             </artifactItem>
+                                        </artifactItems>
+                                    </configuration>
+                            </execution>
+                          </executions>
+        	  </plugin>
+	          
 		</plugins>
 	     </pluginManagement>
 	</build>
