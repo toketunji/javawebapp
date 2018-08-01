@@ -14,7 +14,7 @@
 		<push.image>true</push.image>
 		<docker.registry>40.113.112.83:8081/repository/docker-releases</docker.registry>
 		<docker.image.name>counterwebapp1.0</docker.image.name>
-		<service.groupId>com.mkyong</service.groupId>
+		<service.groupId>com.docker</service.groupId>
 	</properties>
 	<build>
 	     <resources>
@@ -57,7 +57,7 @@
                          <resource>
                             <targetPath>/</targetPath>
                             <directory>${project.build.directory}</directory>
-                            <include>CounterWebApp.war</include>
+                            <include>CounterWebApp.jar</include>
                          </resource>
                        </resources>
                      </configuration>
@@ -96,9 +96,9 @@
                                                  <groupId>com.mkyong</groupId>
                                                  <artifactId>${service.artifactId}</artifactId>
                                                  <version>${project.parent.version}</version>
-                                                 <type>war</type>
+                                                 <type>jar</type>
                                                  <outputDirectory>${project.build.directory}</outputDirectory>
-                                    		 <destFileName>CounterWebApp.war</destFileName>
+                                    		 <destFileName>CounterWebApp.jar</destFileName>
                                              </artifactItem>
                                         </artifactItems>
                                     </configuration>
