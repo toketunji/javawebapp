@@ -77,18 +77,18 @@
 	    <repository>
 		 <id>localnexus</id>
 		 <name>maven-releases</name>
-                 <url>http://137.117.174.44:8081/repository/maven-releases/</url>
+                 <url>http://51.144.122.199:8081/repository/maven-releases/</url>
 	    </repository>
 	</repositories>
 	<distributionManagement>
             <repository>
                 <id>localnexus</id>
 		<name>maven-releases</name>
-                <url>http://40.113.112.83:8081/repository/maven-releases/</url>
+                <url>http://51.144.122.199:8081/repository/maven-releases/</url>
             </repository>
 	    <snapshotRepository>
                 <id>maven-snapshots</id>
-                <url>http://40.113.112.83:8081/repository/maven-snapshots/</url>
+                <url>http://51.144.122.199:8081/repository/maven-snapshots/</url>
             </snapshotRepository>
 	 </distributionManagement>
 	<build>
