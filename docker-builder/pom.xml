@@ -12,7 +12,7 @@
 	<artifactId>docker-builder</artifactId>
 	<properties>
 		<push.image>true</push.image>
-		<docker.registry>40.113.112.83:8081/repository/docker-releases</docker.registry>
+		<docker.registry>51.144.122.199:8081/repository/maven-releases</docker.registry>
 		<docker.image.name>counterwebapp1.0</docker.image.name>
 		<service.groupId>com.mkyong</service.groupId>
 	</properties>
@@ -120,7 +120,7 @@
   			</executions>
    			<configuration>
       				<serverId>localnexus</serverId>
-      				<nexusUrl>http://40.113.112.83:8081/</nexusUrl>
+      				<nexusUrl>http://51.144.122.199:8081/</nexusUrl>
       				<skipStaging>true</skipStaging>
    			</configuration>
 		   </plugin>
