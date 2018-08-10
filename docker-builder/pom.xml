@@ -45,7 +45,7 @@
                          <pushImage>${push.image}</pushImage>
 			 <imageName>${docker.image.name}</imageName>
 			 <imageTags>
-				 <imageTag>${BUILD_NUMBER}-${git.commit.id.abbrev}</imageTag>
+				 <imageTag>${BUILD_NUMBER}</imageTag>
 			 </imageTags>
                         <resources>
                           <resource>
