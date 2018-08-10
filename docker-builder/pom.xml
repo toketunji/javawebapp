@@ -11,10 +11,9 @@
 	</parent>
 	<artifactId>docker-builder</artifactId>
 	<properties>
-		<push.image>true</push.image>
-		<docker.registry>http://104.40.176.67:8081/repository/maven-releases</docker.registry>
-		<docker.image.name>counterwebapp1.0</docker.image.name>
-		<service.groupId>com.mkyong</service.groupId>
+		<push.image>false</push.image>
+		<docker.registry>104.40.176.67</docker.registry>
+		<docker.image.name>counterweb-app</docker.image.name>
 	</properties>
 	<build>
 	     <resources>
@@ -42,8 +41,11 @@
                         </executions>
 		      <configuration>
                          <dockerDirectory>${project.build.directory}</dockerDirectory>
-                         <imageName>${docker.image.name}</imageName>
-			 <pushImage>true</pushImage>
+                         <pushImage>${push.image}</pushImage>
+			 <imageName>${docker.image.name}</imageName>
+			 <imageTags>
+				 <imageTag>${buildNumber}-${git.commit.id.abbrev}</imageTag>
+			 </imageTags>
                         <resources>
                           <resource>
                             <targetPath>/</targetPath>
@@ -57,7 +59,7 @@
                          <resource>
                             <targetPath>/</targetPath>
                             <directory>${project.build.directory}</directory>
-                            <include>CounterWebApp.jar</include>
+                            <include>CounterWebApp.war</include>
                          </resource>
                        </resources>
                      </configuration>
@@ -98,7 +100,7 @@
                                                  <version>${project.parent.version}</version>
                                                  <type>jar</type>
                                                  <outputDirectory>${project.build.directory}</outputDirectory>
-                                    		 <destFileName>CounterWebApp.jar</destFileName>
+                                    		 <destFileName>CounterWebApp.war</destFileName>
                                              </artifactItem>
                                         </artifactItems>
                                     </configuration>
