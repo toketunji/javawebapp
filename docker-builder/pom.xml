@@ -12,7 +12,7 @@
 	<artifactId>docker-builder</artifactId>
 	<properties>
 		<push.image>false</push.image>
-		<docker.registry>40.74.55.161</docker.registry>
+		<docker.registry>http://51.144.179.10:8081</docker.registry>
 		<docker.image.name>counterweb-app</docker.image.name>
 		<service.artifactId>CounterWebApp</service.artifactId>
 	</properties>
@@ -123,7 +123,7 @@
   			</executions>
    			<configuration>
       				<serverId>localnexus</serverId>
-      				<nexusUrl>http://40.74.55.161:8081/</nexusUrl>
+      				<nexusUrl>http://51.144.179.10:8081/</nexusUrl>
       				<skipStaging>true</skipStaging>
    			</configuration>
 		   </plugin>
