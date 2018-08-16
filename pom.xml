@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.mkyong</groupId>
 	<artifactId>CounterWebApp</artifactId>
-	<packaging>war</packaging>
+	<packaging>pom</packaging>
 	<version>2.0</version>
 	<name>CounterWebApp Webapp</name>
 	<url>http://maven.apache.org</url>
@@ -144,11 +144,6 @@
 			<configuration>
 				<path>/CounterWebApp</path>
 			</configuration>
-		  </plugin>
-                  <plugin>
-			<groupId>com.spotify</groupId>
-			<artifactId>docker-maven-plugin</artifactId>
-			<version>0.4.0</version>
 		  </plugin>
 		</plugins>
 
