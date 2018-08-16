@@ -119,7 +119,22 @@
 				<target>${jdk.version}</target>
 			</configuration>
 		  </plugin>
-
+		  <plugin>
+                     <artifactId>maven-war-plugin</artifactId>
+                    <version>2.4</version>
+                    <configuration>
+                        <manifest>
+                           <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                        </manifest>
+                        <archive>
+                           <manifestEntries>
+                              <Specification-Title>${project.name}</Specification-Title>
+                              <Specification-Version>${project.version}</Specification-Version>
+                              <Implementation-Version>${BUILD_TAG}</Implementation-Version>
+                           </manifestEntries>
+                        </archive>
+                    </configuration>
+                  </plugin>
 		  <!-- For Maven Tomcat Plugin -->
 		  <plugin>
 			<groupId>org.apache.tomcat.maven</groupId>
