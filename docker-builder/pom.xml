@@ -12,7 +12,7 @@
 	<artifactId>docker-builder</artifactId>
 	<properties>
 		<push.image>false</push.image>
-		<docker.registry>http://40.113.144.171:8081</docker.registry>
+		<docker.registry>http://40.113.154.118:8081</docker.registry>
 		<docker.image.name>counterweb-app</docker.image.name>
 		<service.artifactId>CounterWebApp</service.artifactId>
 	</properties>
@@ -43,7 +43,7 @@
 		      <configuration>
                          <dockerDirectory>${project.build.directory}</dockerDirectory>
                          <pushImage>${push.image}</pushImage>
-			 <imageName>${docker.image.name}</imageName>
+			 <imageName>${docker.registry}/${docker.image.name}</imageName>
 			 <imageTags>
 				 <imageTag>${BUILD_NUMBER}</imageTag>
 			 </imageTags>
